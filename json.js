@@ -41,7 +41,6 @@ json = JSON.stringify(rabbit, (key, value) => {
 
 // 2. JSON to Object
 // parse(json)
-
 console.clear();
 json = JSON.stringify(rabbit);
 const obj = JSON.parse(json, (key, value) => { //{name: "tori", color: "white", size: null, birthDate: Mon Aug 16 2021 22:27:07 GMT+0900 (한국 표준시)}
@@ -53,3 +52,5 @@ rabbit.jump();
 
 console.log(rabbit.birthDate.getDate()); //16
 console.log(obj.birthDate.getDate()); //16
+
+//Test111
