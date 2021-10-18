@@ -54,3 +54,7 @@ console.log(rabbit.birthDate.getDate()); //16
 console.log(obj.birthDate.getDate()); //16
 
 //Test111
+console.log(rabbit.birthDate.getDate()); //16
+console.log(obj.birthDate.getDate()); //16
+console.log(rabbit.birthDate.getDate()); //16
+console.log(obj.birthDate.getDate()); //16
