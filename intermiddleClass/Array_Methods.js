@@ -51,5 +51,8 @@ console.log(userList);
 // join, split
 let arr3 = ["안녕", "나는", "철수야"];
 let result4 = arr3.join();
-
+let result5 = arr3.join("  ");
+let result6 = arr3.join("-");
 console.log(result4);
+console.log(result5);
+console.log(result6);
