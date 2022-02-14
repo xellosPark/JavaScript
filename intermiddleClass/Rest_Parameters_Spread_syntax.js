@@ -28,8 +28,53 @@ const user3 = new User("Mike", 10, "English");
 console.log(user1);
 console.log(user2);
 console.log(user3);
+/**
+ * 전개 구문
+ * arr4 을 [4,5,6,1,2,3] 으로
+ */
 
 let arr4 = [1,2,3];
 let arr5 = [4,5,6];
 
-let result6 = []
+//arr5.forEach((num)=>{ //(6) [6, 5, 4, 1, 2, 3]
+arr5.reverse().forEach((num)=>{ //(6) [4, 5, 6, 1, 2, 3]
+    arr4.unshift(num); //unshift 배열의 앞에 아이템을 추가한다
+});
+
+console.log(arr4);
+arr6 = [...arr5, ...arr4];
+console.log(arr6);
+
+let user = { name: "Mike"};
+let info = { age: 30};
+let fe   = ["JS","React"];
+let lang = ["Korean","English"];
+
+user = Object.assign({}, user, info, {
+    skills: [],
+});
+console.log(user); //{name: 'Mike', age: 30, skills: Array(0)}
+
+fe.forEach((item) => {
+    user.skills.push(item);
+});
+
+lang.forEach((item) => {
+    user.skills.push(item);
+});
+
+ console.log(user); //{name: 'Mike', age: 30, skills: Array(4)}
+                    // age: 30
+                    // name: "Mike"
+                    // skills: (4) ['JS', 'React', 'Korean', 'English']
+                    
+user4 = {
+    ...user,
+    ...info,
+    skills: [...fe, ...lang],
+};
+
+console.log(user1);//{name: 'Mike', age: 30, skills: Array(4)}
+// age: 30
+// name: "Mike"
+// skills: (4) ['JS', 'React', 'Korean', 'English']
