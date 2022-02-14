@@ -56,3 +56,26 @@ let result6 = arr3.join("-");
 console.log(result4);
 console.log(result5);
 console.log(result6);
+
+// split -> 문자열을 배열로 만듦
+const users = "Mike,Jane,Tom,Tony";
+const result7 = users.split(",");
+console.log(result7);
+let str = "Hello, My name is Mike";
+const result8 = str.split("");
+console.log(result8);
+
+// Array, isArray()
+
+let quser = {
+    name: "Mike",
+    age : 30,
+};
+
+let userarr = ["Mike","Jane","Tom"];
+
+console.log(typeof quser);
+console.log(typeof uesrarr);
+
+console.log(Array.isArray(quser));
+console.log(Array.isArray(userarr));
