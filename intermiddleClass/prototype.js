@@ -65,7 +65,7 @@ Bmw.prototype.navigetion = 1;
 Bmw.prototype.stop = function(){
     console.log("STOP!");
 
-
+}
 // x5.__proto__ = car;
 // z4.__proto__ = car;
 
@@ -89,4 +89,3 @@ const z4 = new Bmw("blue");
 
 //constructor 메서드는 [클래스]
 //의 인스턴스 객체를 생성하고 초기화하는 특별한 메서드입니다. 
-
