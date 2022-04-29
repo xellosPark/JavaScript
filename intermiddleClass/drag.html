@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list {
+            text-align: center;
+            border: solid 2px skyblue;
+            border-radius: 5px;
+            padding: 0.5em 1em 0.5em 2.3em;
+        } 
+        .itme {
+            list-style: none;
+            width: 80px;
+            height: 60px;
+            margin: 10px;
+            font-size: 30px;
+            display: inline-block;
+            text-align: center;
+            background-color: rgb(243, 108, 54);
+            color: white;
+        }
+        /* h1{
+            border: 5px solid red;
+            padding: 20px;
+            margin: 20px;
+            display:block;
+            width: 100px;
+            
+        } */
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="itme" draggable="true">P</li>
+        <li class="itme" draggable="true">P</li>
+        <li class="itme" draggable="true">A</li>
+        <li class="itme" draggable="true">E</li>
+        <li class="itme" draggable="true">L</li>
+    </ul>
+    <script>
+        const list = document.querySelector(".list");
+        // dragstart, dragover, drop
+        // function(){} ()=>{}
+        // list.addEventListener("", 함수)
+        let picked = null;
+        let pickedIndex = null;
+        list.addEventListener("dragstart", (e) => {
+            const obj = e.target;
+            
+            // console.log({obj});
+            // const testArray = [2, 3, 4, 5];
+            // const newArray1 = [testArray];
+            // const newArray = [...testArray]; // 내용 만 가져온다..
+            // console.log(newArray1);
+            // console.log(newArray);
+            // console.log([...obj.parentNode.children].indexOf(obj));
+            picked = e.target;
+            pickedIndex = [...obj.parentNode.children].indexOf(obj)
+            
+            
+        })
+        
+        list.addEventListener("dragover", (e) => {
+            //console.log(e);
+            //e.preventDefault(); a 태그나 submit 태그는 누르게 되면 href 를 통해 이동하거나 , 창이 새로고침하여 실행됩니다.
+            //preventDefault 를 통해 이러한 동작을 막아줄 수 있습니다.
+            e.preventDefault(); // evetent 
+        })
+        
+        list.addEventListener("drop", (e) => {
+            //console.log(e);
+            const obj = e.target;
+            const index = [...obj.parentNode.children].indexOf(obj)
+            // e.target.before(picked)
+            
+            index >  pickedIndex ? obj.after(picked): obj.before(picked)
+        })
+    </script>
+        
+</body>
+</html>
